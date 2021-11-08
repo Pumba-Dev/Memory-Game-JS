@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'PlayerStart2P';
+    src: url('./../../fonts/PressStart2P.ttf');
+}
+
+.player-name {
+    width: 70px;
+    height: 10px;
+    color: var(--color-floral-white);
+    font-family: "PlayerStart2P";
+    font-size: 10px;
+    letter-spacing: 0px;
+    text-align: center;
+}
