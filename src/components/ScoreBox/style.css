@@ -1,0 +1,31 @@
+.score-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    min-width: 50px;
+    min-height: 20px;
+    border: 2px solid var(--color-fiery-rose);
+    background-color: var(--color-floral-white);
+}
+
+.point-box{
+    width: 14px;
+    height: 14px;
+    background-color: var(--color-old-silver);
+}
+
+.point-box.-a1,
+.point-box.-a2,
+.point-box.-a3{
+    background-color: var(--color-mantis);
+}
+
+.point-box.-b2,
+.point-box.-b3{
+    background-color: var(--color-mantis);
+}
+
+.point-box.-c3{
+    background-color: var(--color-mantis);
+}

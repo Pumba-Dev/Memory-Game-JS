@@ -1,10 +1,10 @@
 import "./style.css"
 
-function VersusSymbol() {
+function VersusSymbol(content = "vs") {
     return /*html*/`
-        <p class="versus-symbol">
-            vs
-        </p>
+        <span class="versus-symbol">
+            ${content}
+        </span>
     `;
 }   
 
