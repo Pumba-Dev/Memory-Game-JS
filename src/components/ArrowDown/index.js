@@ -1,9 +1,14 @@
 import "./style.css"
 
-function ArrowDown(linkImage="ArrowDown", alt="Arrow Down", turn="two"){
+function ArrowDown(turn=1){
     
     return /*html*/`
-        <img class="arrow-down -player-${turn}" src="./src/images/${linkImage}.png" alt="${alt}"/>
+        <img 
+            class="arrow-down" 
+            data-currentPlayer = ${turn}
+            src="./src/images/ArrowDown.png" 
+            alt="Arrow Down"
+        />
     `;
 
 } export default ArrowDown;

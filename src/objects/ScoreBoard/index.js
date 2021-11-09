@@ -7,10 +7,11 @@ import ArrowDown from "../../components/ArrowDown";
 function ScoreBoard() {
     return /*html*/`
         <header class="score-board">
+            ${ArrowDown()}
             ${PlayerName("Player1")}
-            ${ScoreBox(3)}
+            ${ScoreBox()}
             ${VersusSymbol()}
-            ${ScoreBox(2)}
+            ${ScoreBox()}
             ${PlayerName("Player2")}
         </header>
     `;
