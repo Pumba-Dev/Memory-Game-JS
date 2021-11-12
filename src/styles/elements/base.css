@@ -4,9 +4,16 @@ html, body {
 }
 
 body {
-    background-color: var(--color-pomb-and-power);
-    max-width: 320px;
+    background-color: var(--color-alura);
+    max-width: 340px;
+    max-height: 608px;
     margin-left: auto;
     margin-right: auto;    
     font-family: "Press Start 2P", cursive;
+}
+
+.background-game{
+    background-color: var(--color-pomb-and-power);
+    box-sizing: border-box;
+
 }

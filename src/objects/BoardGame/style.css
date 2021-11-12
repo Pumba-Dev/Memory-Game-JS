@@ -1,8 +1,11 @@
 .board-game {
-    background-color: red;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: space-evenly;
+    justify-content: space-between;
     perspective: 400px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
 }
