@@ -58,46 +58,43 @@ function BoardGame() {
                 return false;
         }
 
+        function addPoint(){
+            const currentPlayer = $arrowDown.getAttribute("data-currentPlayer");
+            const stringPlayer = currentPlayer == 1 ? "one" : "two";
+            const $currentScorePlayer = $scoreBoard.querySelector(".score-box.-player" + stringPlayer);
+            // Atualizando Atributo de Pontos
+            $currentScorePlayer.setAttribute(
+                "data-points", parseInt($currentScorePlayer.getAttribute("data-points")) + 1
+            );
+            const $scoreBox = $currentScorePlayer.querySelectorAll(".point-box");
+            let i = 0;
+            $scoreBox.forEach((box) => {
+                const currentPoint = $currentScorePlayer.getAttribute("data-points");
+                if(box.classList.item(1) == "-a" + parseInt(currentPoint - 1)){
+                    box.classList.remove("-a" + parseInt(currentPoint - 1));
+                } else if(box.classList.item(1) == "-b" + parseInt(currentPoint - 1)) {
+                    box.classList.remove("-b" + parseInt(currentPoint - 1));
+                } else {
+                    box.classList.remove("-c" + parseInt(currentPoint - 1));
+                }
+                if(i == 0)
+                    box.classList.add("-a" + currentPoint);
+                else if(i == 1)
+                    box.classList.add("-b" + currentPoint);
+                else if(i == 2)
+                    box.classList.add("-c" + currentPoint);
+                i++;
+            });
+        };
         
         if($cardsActive.length == 2) {
             removeFlipEvent();
             setTimeout(() => {
                 if(cardMatch()){
-                    
-                    const currentPlayer = $arrowDown.getAttribute("data-currentPlayer");
-                    const stringPlayer = currentPlayer == 1 ? "one" : "two";
-                    const $currentScorePlayer = $scoreBoard.querySelector(".score-box.-player" + stringPlayer);
-                    
-                    // Atualizando Atributo de Pontos
-                    $currentScorePlayer.setAttribute(
-                        "data-points", parseInt($currentScorePlayer.getAttribute("data-points")) + 1
-                    );
-                    
-                    function addPoint(){
-                        const $scoreBox = $currentScorePlayer.querySelectorAll(".point-box");
-                        let i = 0;
-                        $scoreBox.forEach((box) => {
-                            const currentPoint = $currentScorePlayer.getAttribute("data-points");
-                            if(box.classList.item(1) == "-a" + parseInt(currentPoint - 1)){
-                                box.classList.remove("-a" + parseInt(currentPoint - 1));
-                            } else if(box.classList.item(1) == "-b" + parseInt(currentPoint - 1)) {
-                                box.classList.remove("-b" + parseInt(currentPoint - 1));
-                            } else {
-                                box.classList.remove("-c" + parseInt(currentPoint - 1));
-                            }
-                            if(i == 0)
-                                box.classList.add("-a" + currentPoint);
-                            else if(i == 1)
-                                box.classList.add("-b" + currentPoint);
-                            else if(i == 2)
-                                box.classList.add("-c" + currentPoint);
-                            i++;
-                        });
-                    };
-
                     addPoint();
+                } else {
+                    swapPlayer();
                 }
-                swapPlayer();
                 addFlipEvent();
             }, 1000);
         }
@@ -106,7 +103,7 @@ function BoardGame() {
     function shuffle(o) {
         for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
         return o;
-      }
+    }
 
     const randomCards = shuffle(cards);
     const htmlCardList = randomCards.map((card) => CardFrontBack(card)); 
