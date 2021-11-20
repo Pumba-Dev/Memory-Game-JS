@@ -7,7 +7,7 @@ function CardFrontBack(icon) {
     window.cardFrontBack.handleClick_CardFlip = (event) => { 
         const $origin = event.target;
         const $cardFrontBack = $origin.closest('.card-front-back');
-        $cardFrontBack.classList.toggle("-active");
+        $cardFrontBack.classList.add("-active");
     }
 
     return /*html*/`
